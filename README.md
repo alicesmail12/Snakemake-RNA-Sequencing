@@ -1,2 +1,2 @@
-# Snakemake-RNA-Sequencing
-RNA-sequencing Steps using Snakemake
+# RNA Read Alignment and Counting using Snakemake
+
