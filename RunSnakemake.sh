@@ -21,7 +21,7 @@ module load SAMtools/1.11-GCC-10.2.0
 module load Subread/2.0.3-GCC-11.2.0
 
 # Snakemake DAG
-snakemake -c12 --dag FeatureCounts/GH1_S1_Counts.txt FastQC-Output/GH1_S1_R1_001_fastqc.html | dot -Tsvg > dag.svg
+snakemake -c12 --dag /Alice/RNAseq-Pipeline-Snakemake/FeatureCounts/GH1_S1_Counts.txt /Alice/RNAseq-Pipeline-Snakemake/FastQC-Output/GH1_S1_R1_001_fastqc.html | dot -Tsvg > dag.svg
 
 # Run Snakefile using 12 cores
 snakemake -c12
