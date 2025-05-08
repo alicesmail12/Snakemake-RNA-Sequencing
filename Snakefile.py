@@ -58,7 +58,7 @@ rule Get_Counts:
     featureCounts -p --countReadPairs -a {params.genefile} -o {output.counts} {input.bam}
     """
 
-# Step 5: Counts only
+# Step 5: Get Counts only
 rule Get_CountsOnly:
   input:
     counts = os.path.join(COUNTS_DIR, '{File}_featureCounts.txt')
