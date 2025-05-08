@@ -19,7 +19,7 @@ rule Get_FastQC:
   input:
     os.path.join(FASTQ_DIR, '{File}_R{Read}_001.fastq.gz')
   output:
-    os.path.join(FASTQC_DIR, '{File}_R{Read}_001_fastqc.{Filetype}')
+    os.path.join(FASTQC_DIR, '{File}_R{Read}_001_fastqc.html')
   shell:
     """
     #!/bin/bash
