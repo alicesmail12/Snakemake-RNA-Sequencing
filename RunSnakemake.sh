@@ -4,7 +4,7 @@
 #SBATCH --mem=64G
 #SBATCH -c 12
 
-cd /mnt/storage/nobackup/proj/spnmmd/Alice/RNAseq-Pipeline-Snakemake/
+cd /Alice/RNAseq-Pipeline-Snakemake/
 if [ ! -d ./FastQC-Output/ ]; then mkdir -p ./FastQC-Output/; fi
 if [ ! -d ./HISAT2/ ]; then mkdir -p ./HISAT2/; fi
 if [ ! -d ./FeatureCounts/ ]; then mkdir -p ./FeatureCounts/; fi
