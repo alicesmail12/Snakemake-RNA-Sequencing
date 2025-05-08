@@ -2,7 +2,7 @@
 FILES = ['File1', 'File2']
 READS = [1, 2]
 
-# Directories and files
+# Directories
 FASTQ_DIR = './Experiment_Fastq/'
 FASTQC_DIR = './FastQC-Output/'
 HISAT_DIR = './HISAT2/'
