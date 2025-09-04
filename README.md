@@ -52,3 +52,5 @@ Last I can print all the count columns to a new file.
 # Run
 cat {input.counts} | cut -f1,7 > {output.countsOnly}
 ```
+
+Next I can open the file using R and apply basic RNA-seq analysis methods like `DESeq2`.
