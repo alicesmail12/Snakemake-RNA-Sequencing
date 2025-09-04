@@ -46,7 +46,7 @@ featureCounts -p --countReadPairs -a {params.genefile} -o {output.counts} {input
 
 **Step 4: Gather counts**
 
-Last I can print all the count columns to a new file.
+Lastly I can print all the count columns to a new file.
 
 ```bash
 # Run
