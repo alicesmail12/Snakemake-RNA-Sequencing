@@ -19,3 +19,36 @@ fastqc {File}_R{Read}.fastq -o {FASTQC_DIR}
 
 ![](https://github.com/alicesmail12/Snakemake-WGS/blob/main/FASTQC.png?raw=true)
 <p align="center"><i>Example FastQC Output</i></p>
+
+**Step 2: HISAT Alignment**
+
+Next I used `HISAT2` to align the RNAseq reads to a reference genome. `SAMtools sort` then sorts the resulting BAM files by coordinate.
+
+```bash
+# Modules
+module load HISAT2 gompi SAMtools
+
+# Run
+hisat2 -x {params.index} -1 {input.R1} -2 {input.R2} -p 12 --dta --rna-strandness RF --summary-file {output.sum} --time | samtools sort -o {output.bam}
+```
+
+**Step 3: featureCounts**
+
+Then I can use `featureCounts` to count the number of RNAseq reads mapped to each regions of the reference genome.
+
+```bash
+# Modules
+module load Subread
+
+# Run
+featureCounts -p --countReadPairs -a {params.genefile} -o {output.counts} {input.bam}
+```
+
+**Step 4: Gather counts**
+
+Last I can print all the count columns to a new file.
+
+```bash
+# Run
+cat {input.counts} | cut -f1,7 > {output.countsOnly}
+```
